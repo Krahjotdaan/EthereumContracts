@@ -117,7 +117,7 @@ contract ERC20 is IERC20 {
 
     // token emission
     function mint(address to, uint256 amount) external {
-        require(msg.sender == owner || msg.sender == dao, "ERC20: no permission to coinage");
+        require(msg.sender == dao, "ERC20: no permission to coinage");
         balances[to] += amount;
         _totalSupply += amount;
         
