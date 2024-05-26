@@ -96,7 +96,7 @@ contract ERC721 is IERC721, IERC721Metadata, ERC165 {
     // возвращает URI токена по его id
     function tokenURI(uint256 tokenId_) public view returns (string memory) {
         require(owners[tokenId_] != address(0), "ERC721: URI query for nonexistent token");
-        return string.concat(_baseUri, tokenId_.toString());
+        return string.concat(_baseUri, String.toString(tokenId_));
     }
  
     // возвращает баланса аккаунта по его адресу
